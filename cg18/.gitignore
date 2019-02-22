@@ -1,0 +1,17 @@
+*~
+*.swp
+*.o
+build_debug/
+build_release/
+build/
+cmake-build-debug/
+cmake-build-release/
+.ycm_extra_conf.py
+.idea/
+*.png
+models/
+.vs
+Debug
+assignment-03.cmake
+matlab/
+*.blend

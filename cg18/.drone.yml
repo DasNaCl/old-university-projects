@@ -1,0 +1,12 @@
+pipeline:
+  build:
+    image: stlemme/build-tools
+    pull: true
+    commands:
+      - mkdir build && cd build
+      - cmake -D CMAKE_BUILD_TYPE=Debug ..
+      - cmake --build .
+
+  test:
+    image: stlemme/cgray-tests
+    pull: true
