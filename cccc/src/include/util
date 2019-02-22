@@ -1,0 +1,100 @@
+#pragma once
+
+#include <memory>
+
+namespace util
+{
+
+template<typename T, typename... Args>
+std::unique_ptr<T> make_unique(Args&&... args)
+{
+    return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+}
+
+struct nullopt_t
+{
+    nullopt_t() = default;
+};
+
+static constexpr const nullopt_t nullopt = nullopt_t();
+
+template<typename T>
+class optional
+{
+public:
+    optional(const T& t) : t(make_unique<T>(t))
+        {  }
+    optional(T&& t) : t(make_unique<T>(std::move(t)))
+        {  }
+    optional(optional<T>& opt) : t(std::move(opt.t))
+        {  }
+    optional(optional<T>&& opt) : t(std::move(opt.t))
+        {  }
+    optional(nullopt_t) : t()
+        {  }
+
+    optional<T>& operator=(const T& ot)
+        { t = ot; return *this; }
+    optional<T>& operator=(T&& ot)
+        { t = make_unique<T>(std::move(ot)); return *this; }
+
+    optional<T>& operator=(const optional<T>& ot)
+        { t = ot.t; return *this; }
+    optional<T>& operator=(optional<T>&& ot)
+        { t = std::move(ot.t); return *this; }
+
+    optional<T>& operator=(nullopt_t)
+        { t.reset(); return *this; }
+
+    bool operator==(const optional<T>& opt) const
+        {
+            if(has() && opt.has())
+                return get() == opt.get();
+            return has() == opt.has();
+        }
+
+    T& get()
+        { return *t; }
+    const T& get() const
+        { return *t; }
+
+    bool has() const
+        { return static_cast<bool>(t); }
+        
+    operator bool() const
+        { return has(); }
+private:
+    std::unique_ptr<T> t;
+};
+
+template<typename T>
+bool operator==(const optional<T>& opt, nullopt_t)
+{ return !opt.has(); }
+
+template<typename T>
+bool operator==(optional<T>&& opt, nullopt_t)
+{ return !opt.has(); }
+
+template<typename T>
+bool operator!=(const optional<T>& opt, nullopt_t)
+{ return opt.has(); }
+
+template<typename T>
+bool operator!=(optional<T>&& opt, nullopt_t)
+{ return opt.has(); }
+
+}
+
+namespace std
+{
+    template<typename T>
+    struct hash<util::optional<T>>
+    {
+        std::size_t operator()(const util::optional<T>& k) const
+        {
+            if(!k.has())
+                return 1;
+            return hash<T>()(k.get()) + 1;
+        }
+    };
+}

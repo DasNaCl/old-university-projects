@@ -1,0 +1,6 @@
+cFiles/string_token.c:1:1: string-literal "Hallo hier ist ein ganz toller string."
+cFiles/string_token.c:2:1: string-literal "hier noch ne escape sequence? \r und evtl noch eine? \t \v\n"
+cFiles/string_token.c:3:1: string-literal "\n"
+cFiles/string_token.c:3:5: string-literal "lets see how this works"
+cFiles/string_token.c:3:30: string-literal ""
+cFiles/string_token.c:4:1: string-literal "\""

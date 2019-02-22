@@ -1,0 +1,8 @@
+cFiles/multiline_comment.c:1:40: identifier Hi
+cFiles/multiline_comment.c:4:7: identifier should_be_line_4_column_7
+cFiles/multiline_comment.c:4:33: constant '5'
+cFiles/multiline_comment.c:7:1: identifier line_7_column_1
+cFiles/multiline_comment.c:9:56: identifier line_9_column_56
+cFiles/multiline_comment.c:10:56: identifier line_9_column_57
+cFiles/multiline_comment.c:11:57: identifier line_9_column_57
+cFiles/multiline_comment.c:16:4: identifier line_16_column_4

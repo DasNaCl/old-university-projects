@@ -1,0 +1,32 @@
+/home/matthis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4892.24/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE= -G "CodeBlocks - Unix Makefiles" /home/matthis/c4
+-- The C compiler identification is GNU 8.2.0
+-- The CXX compiler identification is GNU 8.2.0
+-- Check for working C compiler: /usr/bin/cc
+CMake Error: Generator: execution of make failed. Make command was: "/usr/bin/gmake" "cmTC_d71f2/fast"
+-- Check for working C compiler: /usr/bin/cc -- broken
+CMake Error at /home/matthis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4892.24/bin/cmake/linux/share/cmake-3.12/Modules/CMakeTestCCompiler.cmake:52 (message):
+  The C compiler
+
+    "/usr/bin/cc"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: /home/matthis/c4/CMakeFiles/CMakeTmp
+    
+    Run Build Command:"/usr/bin/gmake" "cmTC_d71f2/fast"
+    No such file or directory
+    Generator: execution of make failed. Make command was: "/usr/bin/gmake" "cmTC_d71f2/fast"
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:3 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/matthis/c4/CMakeFiles/CMakeOutput.log".
+See also "/home/matthis/c4/CMakeFiles/CMakeError.log".

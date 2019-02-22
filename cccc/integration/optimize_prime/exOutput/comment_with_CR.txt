@@ -1,0 +1,5 @@
+cFiles/comment_with_CR.c:2:1: keyword int
+cFiles/comment_with_CR.c:2:5: identifier a
+cFiles/comment_with_CR.c:2:7: punctuator =
+cFiles/comment_with_CR.c:2:9: constant 3
+cFiles/comment_with_CR.c:2:10: punctuator ;

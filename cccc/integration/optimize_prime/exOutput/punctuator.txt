@@ -1,0 +1,3 @@
+cFiles/punctuator.c:1:1: identifier asdf
+cFiles/punctuator.c:1:6: identifier asdf
+cFiles/punctuator.c:1:18: identifier asdfsdf

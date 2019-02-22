@@ -1,0 +1,4 @@
+cFiles/comment.c:3:2: identifier line_3_column_2
+cFiles/comment.c:5:1: identifier line_5_column_1
+cFiles/comment.c:16:4: identifier line_16_column_4
+cFiles/comment.c:17:1: identifier line_17_column_1

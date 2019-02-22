@@ -1,0 +1,1 @@
+cFiles/constant_valid_escape_sequence.c:1:1: constant '\n'
